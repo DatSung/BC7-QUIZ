@@ -1,35 +1,29 @@
 import React, { useEffect, useState } from "react";
 
 export default function Question(props) {
-  const [question, setQuestion] = useState([])
+  const [questions, setQuestions] = useState([]);
+
   useEffect(() => {
-      setQuestion(Object.values(props.lsQuizz))
-  }, [props.lsQuizz])
+    setQuestions(Object.values(props.lsQuizz));
+  }, [props.lsQuizz]);
+
   return (
-    // <div key={question.id} className="question">
-
-    question.map((v, i) => {
-      return (
-        <div key={v.id}>
-          <p>{v.content}</p>
-          {
-            v.answer.map((values,i)=>{
-              return (
-                <>
-                {
-                  console.log("multiple",v.isMutiple)
-                }
-                <input key={values.id} type={v.isMutiple? 'checkbox' : 'radio'} name="answerId" value={values.id}></input>{values.content}<br/>
-                </>
-              )
-            })
-          }
-          
+    <div className="question-container">
+      {questions.map((question, i) => (
+        <div key={question.id} className="question">
+          <p>{question.content}</p>
+          {question.answer.map((answer, j) => (
+            <div key={answer.id}>
+              <input
+                type={question.isMutiple ? "checkbox" : "radio"}
+                name='answerId'
+                value={answer.id}
+              />
+              {answer.content}
+            </div>
+          ))}
         </div>
-      )
-    })
-    // </div
-
-
+      ))}
+    </div>
   );
 }
