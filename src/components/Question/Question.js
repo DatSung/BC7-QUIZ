@@ -19,8 +19,8 @@ export default function Question(props) {
 
             <div key={answer.id}>
               <input
-                type={answer.isMultiple ? "checkbox" : "radio"}
-                name={`answerId-${i}`}
+                type={question.isMutiple ? "checkbox" : "radio"}
+                name='answerId'
                 value={answer.id}
               />
               {answer.content}
