@@ -13,10 +13,13 @@ export default function Question(props) {
         <div key={v.id}>
           <p>{v.content}</p>
           {
-            v.answer.map((v,i)=>{
+            v.answer.map((values,i)=>{
               return (
                 <>
-                <input key={v.id} type={v.isMultiple ? "checkbox" : "radio"} name="answerId" value={v.id}></input>{v.content}<br/>
+                {
+                  console.log("multiple",v.isMutiple)
+                }
+                <input key={values.id} type={v.isMutiple? 'checkbox' : 'radio'} name="answerId" value={values.id}></input>{values.content}<br/>
                 </>
               )
             })
