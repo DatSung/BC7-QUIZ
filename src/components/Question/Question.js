@@ -9,10 +9,14 @@ export default function Question(props) {
 
   return (
     <div className="question-container">
+
       {questions.map((question, i) => (
+
         <div key={question.id} className="question">
           <p>{question.content}</p>
+          
           {question.answer.map((answer, j) => (
+
             <div key={answer.id}>
               <input
                 type={answer.isMultiple ? "checkbox" : "radio"}
@@ -21,9 +25,12 @@ export default function Question(props) {
               />
               {answer.content}
             </div>
+            
           ))}
+
         </div>
       ))}
+
     </div>
   );
 }
