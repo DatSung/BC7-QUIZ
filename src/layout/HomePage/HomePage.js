@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import './HomePage.css';
+import './HomePage.scss';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 
