@@ -50,6 +50,7 @@ export default function Question(props) {
       {
         //console.log(JSON9.stringify(initialAction))
       }
+
       {questions.map((question, i) => (
         <div key={question.id} className="question">
           <p>{question.content}</p>
@@ -64,7 +65,9 @@ export default function Question(props) {
                   )
                 }
                 type={question.isMutiple ? "checkbox" : "radio"}
-                name="answerId"
+
+                name={`answerId-${i}`}
+
                 value={answer.id}
               />
               {answer.content}
@@ -75,3 +78,4 @@ export default function Question(props) {
     </div>
   );
 }
+
