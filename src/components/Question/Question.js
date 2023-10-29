@@ -1,9 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Question(props) {
+export default function Question({lsQuizz}) {
+  const nav = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [answer, setAnswer] = useState(() => {
-    let arr = Object.keys(props.lsQuizz).map((v, i) => {
+    let arr = Object.keys(lsQuizz).map((v, i) => {
       return {
         quesId: v,
         ansId: [],
@@ -13,8 +15,8 @@ export default function Question(props) {
   });
 
   useEffect(() => {
-    setQuestions(Object.values(props.lsQuizz));
-  }, [props.lsQuizz]);
+    setQuestions(Object.values(lsQuizz));
+  }, [lsQuizz]);
 
   const HandleQuestion = (questionId, answerId, isMutiple) => {
     answer.map((v, i) => {
@@ -24,7 +26,7 @@ export default function Question(props) {
             //bằng -1 thì không có phần tử đó
             v.ansId.push(answerId);
           } else {
-            //nếu mảng khác rỗng nghĩa là đáp án đó đã có -> tiến hành xóa khỏi mảng
+            //nếu khác -1 -> đáp án đó đã có -> tiến hành xóa khỏi mảng
             v.ansId = v.ansId.filter((id) => id !== answerId);
           }
         }
@@ -34,8 +36,14 @@ export default function Question(props) {
         }
       }
     });
+  };
 
-    console.log(answer);
+  const HandleSubmit = () => {
+    nav("/result", {
+      state: {
+        answer: answer
+      }
+    });
   };
   return (
     <div className="question-container">
@@ -55,8 +63,10 @@ export default function Question(props) {
               {answer.content}
             </div>
           ))}
+
         </div>
       ))}
+      <button onClick={HandleSubmit}>Submit</button>
     </div>
   );
 }
