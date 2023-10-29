@@ -35,9 +35,9 @@ export default function Question({lsQuizz}) {
           v.ansId[0] = answerId;
         }
       }
-    });
+    })
+    //localStorage.setItem("backup", answer)
   };
-
   const HandleSubmit = () => {
     nav("/result", {
       state: {

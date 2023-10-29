@@ -5,14 +5,14 @@ export default function ResultPage() {
   const answer = useLocation();
   return (
     <>
-      Result
+      Your answer
       {answer.state?.answer.map((v, i) => {
         return (
           <div key={i}>
-            <p>{v.quesId}</p>
+            <p>Question Id: {v.quesId}</p>
             <p>
               {v.ansId.map((ans, j) => 
-                <p key={j}>{ans}</p>
+                <p key={j}>Answer id {ans}</p>
               )}
             </p>
             <br/>
