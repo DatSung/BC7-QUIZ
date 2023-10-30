@@ -1,0 +1,38 @@
+$color_1: white;
+$font-family_1: Arial, sans-serif;
+$background-color_1: #007bff;
+$background-color_2: #0056b3;
+
+/* Add styling for the question container */
+/* Style the question text */
+/* Style the input elements (radio and checkbox) */
+/* Style the submit button */
+.question-container {
+	font-family: $font-family_1;
+	margin: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+.question {
+	p {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+}
+input[type="radio"] {
+	margin-right: 5px;
+}
+input[type="checkbox"] {
+	margin-right: 5px;
+}
+button {
+	background-color: $background-color_1;
+	color: $color_1;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	margin-top: 10px;
+	&:hover {
+		background-color: $background-color_2;
+	}
+}

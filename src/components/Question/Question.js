@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import './Question.scss'
 export default function Question({lsQuizz}) {
   const nav = useNavigate();
   const [questions, setQuestions] = useState([]);
