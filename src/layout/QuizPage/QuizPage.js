@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Question from "../../components/Question/Question";
 import { GetQuiz } from "../../service/HomePageService/HomePageService";
-
+import './QuizPage.scss';
 
 
 export default function QuizPage() {

@@ -1,38 +1,44 @@
 $color_1: white;
 $font-family_1: Arial, sans-serif;
-$background-color_1: #007bff;
-$background-color_2: #0056b3;
+$background-color_1: #f9f9f9;
+$background-color_2: #007bff;
+$background-color_3: #0056b3;
 
-/* Add styling for the question container */
+/* Style the quiz form container */
+/* Style individual questions */
 /* Style the question text */
-/* Style the input elements (radio and checkbox) */
+/* Style answer options */
 /* Style the submit button */
 .question-container {
-	font-family: $font-family_1;
-	margin: 20px;
-	padding: 10px;
+	width: 80%;
+	margin: 0 auto;
+	background-color: $background-color_1;
+	padding: 20px;
 	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-family: $font-family_1;
 }
 .question {
+	margin: 10px 0;
 	p {
 		font-weight: bold;
-		margin-bottom: 10px;
+		margin: 5px 0;
 	}
-}
-input[type="radio"] {
-	margin-right: 5px;
-}
-input[type="checkbox"] {
-	margin-right: 5px;
-}
-button {
-	background-color: $background-color_1;
-	color: $color_1;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
-	margin-top: 10px;
-	&:hover {
+	input[type="radio"] {
+		margin-right: 10px;
+	}
+	input[type="checkbox"] {
+		margin-right: 10px;
+	}
+	button {
 		background-color: $background-color_2;
+		color: $color_1;
+		padding: 10px 20px;
+		border: none;
+		cursor: pointer;
+		margin-top: 20px;
+		&:hover {
+			background-color: $background-color_3;
+		}
 	}
 }
